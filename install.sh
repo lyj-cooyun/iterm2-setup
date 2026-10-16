@@ -64,7 +64,7 @@ if (( DO_BREW )); then
     echo '  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
     echo "  然后重跑： $0"
   else
-    run "brew bundle install --file='$BUNDLE_DIR/Brewfile' --no-lock"
+    run "brew bundle install --file='$BUNDLE_DIR/Brewfile'"
     ok "Homebrew 包就绪（bat / eza / fzf / gh / uv / ffmpeg / iTerm2 / 字体）"
   fi
 fi
