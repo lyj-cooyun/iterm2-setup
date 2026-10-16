@@ -1,0 +1,27 @@
+# 敏感文件：永远不要提交
+secrets.env
+*.env
+!secrets.env.example
+.env
+
+# 备份 / 临时
+*.bak
+*.bak-*
+.zshrc.bak-*
+*.orig
+*.tmp
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# 编辑器
+*.swp
+*~
+.idea/
+.vscode/
+
+# export-refresh 的探测结果（仅比对用）
+Brewfile.detected

@@ -1,0 +1,42 @@
+iTerm2 + zsh 环境复刻包 · 清单
+源环境：iTerm2 3.7.4 · macOS (arm64) · zsh + oh-my-zsh + Powerlevel10k
+
+【iTerm2】
+  iterm2/com.googlecode.iterm2.plist        全局偏好设置（XML，可 diff）
+                                            · 已把绝对路径替换为 @@SRC_HOME@@ 占位符，install.sh 会自动改写
+                                            · 已剥离 21 个机器状态 key（安装 ID、窗口位置、系统版本、提示记录等）
+  iterm2/DynamicProfiles/codex-themes.json  3 套动态 Profile，每套含状态栏组件布局：
+                                              · Catppuccin Mocha
+                                              · Gruvbox Dark
+                                              · Everforest Dark Med
+                                            状态栏：工作目录 / Git / 弹簧 / CPU / 内存 / 网络 / 电池 / 时钟
+
+【字体】
+  MesloLGS-NF-Regular 13pt  ← profile 实际引用
+  brew cask: font-meslo-for-powerlevel10k, font-jetbrains-mono-nerd-font
+
+【Shell / Prompt】
+  dotfiles/zshrc      oh-my-zsh + powerlevel10k + 插件（无任何密钥、无个人信息）
+  dotfiles/p10k.zsh   Powerlevel10k 完整配置（89 KB，提示符样式的核心）
+  dotfiles/zprofile   Homebrew shellenv + OrbStack init
+  dotfiles/secrets.env.example  敏感变量模板（真实值不进仓库）
+
+  oh-my-zsh                       60c9a7a839b790cd905d0fd4419435124fd1bdc0
+  plugins/zsh-autosuggestions     85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5
+  plugins/zsh-completions         b5e8e0a22deb05a807bb8655aef809a29f3cffed
+  plugins/zsh-syntax-highlighting 0bfcb582e71d3abe604ce67bc0fe5a21f377507e
+  themes/powerlevel10k            d05a1b00f9a61f9578bf9dc19b8451942dde8734
+  启用的插件：git brew macos sudo extract colored-man-pages command-not-found z
+              zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+
+【命令行工具】
+  bat · eza · fzf · gh · uv · ffmpeg（见 Brewfile）
+
+【可选 · 菜单栏】
+  extras/swiftbar/launcher.10s.sh   SwiftBar 脚本启动器
+  extras/swiftbar/sysinfo.10s.sh    SwiftBar 系统信息
+
+【明确不包含】
+  ✗ iTerm2 SavedState / chatdb.sqlite / socket / iTermServer 二进制（机器本地状态）
+  ✗ ~/.zsh_history、~/.ssh、gh 凭据、Keychain 中的任何内容
+  ✗ 任何 API key、token、密码、证书身份
